@@ -5,6 +5,7 @@ const typeDefs = `
 
   type Mutation {
     createUser(user: UserInput): ID
+    followUser(id: ID!, user: UserInput): ID
   }
 
   type User {
@@ -12,6 +13,7 @@ const typeDefs = `
     name: String!
     email: String!
     age: Int!
+    following: [User]
   }
 
   input UserInput {
