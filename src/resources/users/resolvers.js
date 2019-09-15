@@ -10,7 +10,7 @@ const resolvers = {
     createUser: async (_, { user }) => await User.create(user),
     followUser: async (_, { id, user }, { pubsub }) => {
       await User.findByIdAndUpdate(id, {
-        $push: { following: user }
+        $push: { followedBy: user }
       })
 
       pubsub.publish(CHANNEL_NAME, { userFollowed: await User.find({}) })

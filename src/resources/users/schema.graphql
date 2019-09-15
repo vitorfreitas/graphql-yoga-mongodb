@@ -17,7 +17,7 @@ type User {
   name: String!
   email: String!
   age: Int!
-  following: [User]
+  followedBy: [User]
 }
 
 input UserInput {
